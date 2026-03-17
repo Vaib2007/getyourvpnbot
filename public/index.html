@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetYourVPN Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+        
+        .emoji {
+            font-size: 4em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .features {
+            margin: 30px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            color: #333;
+        }
+        
+        .feature-icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+        
+        .cta-button {
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .command {
+            background: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 20px 0;
+            color: #333;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🌊</div>
+        <h1>GetYourVPN Bot</h1>
+        <p>Your automated Surfshark VPN configuration generator</p>
+        
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">🔐</span>
+                <span>Secure WireGuard configuration generation</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🌍</span>
+                <span>Access to all Surfshark server locations</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">⚡</span>
+                <span>Instant configuration file delivery</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🤖</span>
+                <span>Automated setup via Telegram bot</span>
+            </div>
+        </div>
+        
+        <p><strong>How to use:</strong></p>
+        <div class="command">
+            /connect email:password
+        </div>
+        
+        <a href="https://t.me/YourBotUsername" class="cta-button">
+            Start Using the Bot on Telegram
+        </a>
+        
+        <footer>
+            Powered by Vercel • Monitored by Speed Insights
+        </footer>
+    </div>
+    
+    <script type="module">
+        import { injectSpeedInsights } from '/@vercel/speed-insights';
+        injectSpeedInsights();
+    </script>
+</body>
+</html>
