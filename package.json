@@ -6,12 +6,20 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "node-telegram-bot-api": "^0.67.0",
-    "axios": "^1.6.0"
+    "@vercel/speed-insights": "^2.0.0",
+    "axios": "^1.6.0",
+    "node-telegram-bot-api": "^0.67.0"
   },
   "vercel": {
     "rewrites": [
-      { "source": "/webhook", "destination": "/api/webhook.js" }
+      {
+        "source": "/",
+        "destination": "/api/index.js"
+      },
+      {
+        "source": "/webhook",
+        "destination": "/api/webhook.js"
+      }
     ]
   }
 }
