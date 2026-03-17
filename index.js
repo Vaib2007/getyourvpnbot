@@ -3,6 +3,7 @@ const axios = require('axios');
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
+const express = require('express');
 
 const TOKEN = 'YOUR_BOT_TOKEN';
 const WEBHOOK_URL = 'https://your-domain.com/webhook';
@@ -214,6 +215,22 @@ bot.on('message', async (msg) => {
   else if (text === '/help') {
     await bot.sendMessage(chatId, 'Use: /connect email:password\nExample:\n/connect john@example.com:MyPassword123');
   }
+});
+
+// Express web server for Speed Insights
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Serve Speed Insights package files
+app.use('/@vercel/speed-insights', express.static(path.join(__dirname, 'node_modules/@vercel/speed-insights/dist')));
+
+// Serve static files from public directory
+app.use(express.static('public'));
+
+// Start the web server
+app.listen(PORT, () => {
+  console.log(`Web server running on port ${PORT}`);
+  console.log(`Speed Insights enabled at http://localhost:${PORT}`);
 });
 
 console.log('Bot started...');
