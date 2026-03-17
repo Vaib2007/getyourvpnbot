@@ -51,7 +51,7 @@ module.exports = async (req, res) => {
 
       try {
 await new Promise(resolve => setTimeout(resolve, 2000));
-const loginRes = await axios.post('https://my.uymgg1.com/auth/login',
+const loginRes = await axios.post('https://order.uymgg1.com/?frequency=1&slug=vpn',
   { username: email, password },
   { headers: { 
     'Content-Type': 'application/json;charset=utf-8',
