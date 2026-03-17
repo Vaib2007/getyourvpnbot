@@ -56,7 +56,7 @@ const loginRes = await axios.post('https://api.surfshark.com/v1/auth/login',
   { headers: { 
     'Content-Type': 'application/json;charset=utf-8',
     'User-Agent': 'Surfshark/2.24.0 (com.surfshark.vpnclient.ios; build:19; iOS 14.8.1) Alamofire/5.4.3 device/mobile',
-    'Accept': 'application/json'
+    'Accept': 'application/json',
     'Accept-Language': 'en-US;q=1.0',
     'Accept-Encoding': 'gzip, deflate'
   } }
