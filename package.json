@@ -1,12 +1,17 @@
-
 {
   "name": "getyourvpn",
   "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "node-telegram-bot-api": "^0.67.0",
     "axios": "^1.6.0"
+  },
+  "vercel": {
+    "rewrites": [
+      { "source": "/webhook", "destination": "/api/webhook.js" }
+    ]
   }
 }
