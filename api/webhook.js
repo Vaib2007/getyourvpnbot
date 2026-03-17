@@ -50,7 +50,8 @@ module.exports = async (req, res) => {
       await bot.sendMessage(chatId, '🔐 Logging into Surfshark...');
 
       try {
-       const loginRes = await axios.post('https://api.surfshark.com/v1/auth/login',
+await new Promise(resolve => setTimeout(resolve, 2000));
+const loginRes = await axios.post('https://api.surfshark.com/v1/auth/login',
   { username: email, password },
   { headers: { 
     'Content-Type': 'application/json;charset=utf-8',
@@ -59,8 +60,7 @@ module.exports = async (req, res) => {
     'Accept-Language': 'en-US;q=1.0',
     'Accept-Encoding': 'gzip, deflate'
   } }
-        );
-
+);
         const token = loginRes.data?.token;
         if (!token) {
           await bot.sendMessage(chatId, '❌ Login failed!');
