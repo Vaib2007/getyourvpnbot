@@ -4,15 +4,14 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
-const TOKEN = 'YOUR_BOT_TOKEN';
-const WEBHOOK_URL = 'https://your-domain.com/webhook';
+const TOKEN = process.env.TOKEN || '8505390968:AAHFnruoXTNHdX-iYXN1NNJk94rMMS_sCIg';
 const DATA_DIR = './surfshark_data/';
 
 if (!fs.existsSync(DATA_DIR)) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 
-const bot = new TelegramBot(TOKEN, { webhook: { hook: WEBHOOK_URL } });
+const bot = new TelegramBot(TOKEN, { polling: false });
 
 function generateWireguardKeys(userId) {
   const userDir = path.join(DATA_DIR, String(userId));
@@ -216,4 +215,4 @@ bot.on('message', async (msg) => {
   }
 });
 
-console.log('Bot started...');
+module.exports = bot;
